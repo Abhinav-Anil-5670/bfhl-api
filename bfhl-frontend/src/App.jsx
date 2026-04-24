@@ -41,7 +41,7 @@ function App() {
 
       // 2. Call the API [cite: 120]
       // TODO: Change this to your deployed backend URL later!
-      const apiUrl = 'http://localhost:3000/bfhl';
+      const apiUrl = 'https://bfhl-api-i339.onrender.com/bfhl';
 
       const res = await fetch(apiUrl, {
         method: 'POST',
