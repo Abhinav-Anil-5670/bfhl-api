@@ -5,10 +5,10 @@ const processGraphData = (req, res) => {
     try {
         const { data } = req.body;
 
-        // Process data through the service [cite: 4]
+
         const result = graphService.processHierarchies(data);
 
-        // Combine identity with result schema [cite: 13, 14]
+
         return res.status(200).json({
             user_id: identity.USER_ID,
             email_id: identity.EMAIL_ID,

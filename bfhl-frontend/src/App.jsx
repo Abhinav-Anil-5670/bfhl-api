@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 
-// Recursive component to render the nested tree structure [cite: 121]
 const TreeViewer = ({ data }) => {
   if (typeof data !== 'object' || data === null) return null;
 
@@ -30,7 +29,6 @@ function App() {
     setLoading(true);
 
     try {
-      // 1. Validate JSON on the client side
       let parsedData;
       try {
         parsedData = JSON.parse(inputData);
@@ -39,8 +37,6 @@ function App() {
         throw new Error('Invalid JSON format. Please enter a valid array of strings.');
       }
 
-      // 2. Call the API [cite: 120]
-      // TODO: Change this to your deployed backend URL later!
       const apiUrl = 'https://bfhl-api-i339.onrender.com/bfhl';
 
       const res = await fetch(apiUrl, {
@@ -57,7 +53,7 @@ function App() {
 
       setResponse(result);
     } catch (err) {
-      setError(err.message); // Show clear error message [cite: 123]
+      setError(err.message);
     } finally {
       setLoading(false);
     }
